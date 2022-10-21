@@ -2,6 +2,10 @@ package com.luv2code.jackson.json.demo;
 
 import java.util.Arrays;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true) // Tell Jackson, if there is any unknown property (available in Json but not
+											// in POJO) ignore them, and don't cause exception
 public class Student {
 
 	private int id;
@@ -10,9 +14,9 @@ public class Student {
 	private boolean active;
 	private Address address;
 	private String[] languages;
-	
+
 	public Student() {
-		
+
 	}
 
 	public int getId() {
@@ -69,5 +73,4 @@ public class Student {
 				+ ", address=" + address + ", languages=" + Arrays.toString(languages) + "]";
 	}
 
-	
 }
